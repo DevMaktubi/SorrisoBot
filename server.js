@@ -14,18 +14,24 @@ var Tweet = new Twitter({
 
 
     function retweet(event) {
+      var Tweetlocation = event.user.location
       var TweetId = event.id_str
       console.log(TweetId)
       var Tweeter = event.user.screenName
-      Tweet.post(`statuses/retweet/${TweetId}`, function(err){
-        if(err){
-          console.log('deu erro no retweet:')
-          console.log(err)
-
-        }else {
-          console.log('RETWEETADO: ',  `https://twitter.com/${Tweeter}/status/${TweetId}`)
-        }
-      })
+      if(Tweetlocation !== null){
+        console.log(Tweetlocation)
+        Tweet.post(`statuses/retweet/${TweetId}`, function(err){
+          if(err){
+            console.log('deu erro no retweet:')
+            console.log(err)
+  
+          }else {
+            console.log('RETWEETADO: ',  `https://twitter.com/${Tweeter}/status/${TweetId}`)
+          }
+        })
+      }else {
+        console.log("era Null, ignorado")
+      }
 
     }
 
