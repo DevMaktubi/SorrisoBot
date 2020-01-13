@@ -1,13 +1,11 @@
 
 var Twitter = require('twitter');
 
-require('dotenv').config()
-
 var Tweet = new Twitter({
-  consumer_key:         process.env.consumer_key,
-  consumer_secret:      process.env.consumer_secret,
-  access_token_key:     process.env.acess_token_key,
-  access_token_secret:  process.env.acess_token_secret,
+  consumer_key:         process.env.BOT_CONSUMER_KEY,
+  consumer_secret:      process.env.BOT_CONSUMER_SECRET,
+  access_token_key:     process.env.BOT_ACESS_TOKEN,
+  access_token_secret:  process.env.BOT_ACESS_TOKEN_SECRET,
 });
 
 
