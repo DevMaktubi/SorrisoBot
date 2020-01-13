@@ -29,7 +29,7 @@ var Tweet = new Twitter({
 
     }
 
-    var stream = Tweet.stream('statuses/filter', {track: 'Sorriso testeteste'})
+    var stream = Tweet.stream('statuses/filter', {track: 'Sorriso'})
 
     stream.on('data', retweet)
 
