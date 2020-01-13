@@ -4,7 +4,8 @@
   "description": "\"O melhor bot do Twitter\"",
   "main": "server.js",
   "scripts": {
-    "test": "test "
+    "test": "test ",
+    "start": "nodemon server.js"
   },
   "keywords": [
     "bot",

@@ -1,7 +1,14 @@
 
 var Twitter = require('twitter');
-var config = require('./config.js');
-var Tweet = new Twitter(config);
+
+require('dotenv').config()
+
+var Tweet = new Twitter({
+  consumer_key:         process.env.consumer_key,
+  consumer_secret:      process.env.consumer_secret,
+  access_token_key:     process.env.acess_token_key,
+  access_token_secret:  process.env.acess_token_secret,
+});
 
 
 
