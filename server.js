@@ -14,23 +14,27 @@ var Tweet = new Twitter({
 
 
     function retweet(event) {
+      // console.log(event)
       var Tweetlocation = event.user.location
       var TweetId = event.id_str
-      console.log(TweetId)
-      var Tweeter = event.user.screenName
-      if(Tweetlocation !== null){
-        console.log(Tweetlocation)
+      // console.log(TweetId)
+      var Tweeter = event.user.name
+      if(Tweetlocation !== null && event.is_quote_status !== true){
         Tweet.post(`statuses/retweet/${TweetId}`, function(err){
           if(err){
-            console.log('deu erro no retweet:')
-            console.log(err)
+            if(err[0].code == 327){
+              return
+            }else {
+              console.log('deu erro no retweet:')
+              console.log(err)
+            }
   
           }else {
             console.log('RETWEETADO: ',  `https://twitter.com/${Tweeter}/status/${TweetId}`)
           }
         })
       }else {
-        console.log("era Null, ignorado")
+        return 
       }
 
     }
