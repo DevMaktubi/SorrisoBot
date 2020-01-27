@@ -17,3 +17,5 @@
 ```
   yarn start
 ```
+
+### Atualmente Hosteado no [Heroku](https://dashboard.heroku.com)
